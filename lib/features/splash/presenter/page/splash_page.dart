@@ -21,7 +21,7 @@ class _SplashScreen extends State<SplashPage> {
   void initState() {
     super.initState();
 
-    Timer(const Duration(milliseconds: 800), () {
+    Timer(const Duration(milliseconds: 1300), () {
       setState(() {
         opacity = 0;
       });
@@ -36,7 +36,7 @@ class _SplashScreen extends State<SplashPage> {
         duration: kThemeAnimationDuration,
         onEnd: () {
           if (opacity == 0) {
-            Modular.to.navigate(MainRoutes.welcome.route);
+            Modular.to.navigate(MainRoutes.home.route);
           }
         },
         child: const Center(
