@@ -1,4 +1,4 @@
-import 'package:poke_fusion/main_routes.dart';
+import 'package:poke_fusion/core/main_routes.dart';
 
 enum SplashRoutes {
   splashPage('/');

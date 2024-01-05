@@ -1,4 +1,4 @@
-import '../../main_routes.dart';
+import '../../core/main_routes.dart';
 
 enum HomeRoutes {
   homePage('/');
