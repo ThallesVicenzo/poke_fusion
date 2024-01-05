@@ -36,7 +36,6 @@ dependencies:
     path: app_design
   cupertino_icons: ^1.0.2
   flutter_modular: ^6.3.2
-  mobx: ^2.3.0
   dio: ^5.4.0
 
 
