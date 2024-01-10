@@ -1,21 +1,27 @@
+import 'package:dio/dio.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:poke_fusion/features/splash/splash_module.dart';
-import 'package:poke_fusion/features/home/home_module.dart';
 import 'package:poke_fusion/core/main_routes.dart';
+
+import 'features/home/home_module.dart';
 
 class AppModule extends Module {
   @override
-  void binds(i) {}
+  List<Bind> get binds => [
+        Bind.singleton<Dio>(
+          (i) => Dio(),
+        ),
+      ];
 
   @override
-  void routes(r) {
-    r.module(
-      MainRoutes.splash.route,
-      module: SplashModule(),
-    );
-    r.module(
-      MainRoutes.home.route,
-      module: HomeModule(),
-    );
-  }
+  List<ModularRoute> get routes => [
+        ModuleRoute(
+          MainRoutes.splash.route,
+          module: SplashModule(),
+        ),
+        ModuleRoute(
+          MainRoutes.home.route,
+          module: HomeModule(),
+        ),
+      ];
 }

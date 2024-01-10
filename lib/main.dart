@@ -5,6 +5,7 @@ import 'package:poke_fusion/app_module.dart';
 import 'app_widget.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(
     ModularApp(
       module: AppModule(),

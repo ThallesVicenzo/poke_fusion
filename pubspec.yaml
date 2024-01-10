@@ -35,7 +35,7 @@ dependencies:
   app_design:
     path: app_design
   cupertino_icons: ^1.0.2
-  flutter_modular: ^6.3.2
+  flutter_modular: ^5.0.0
   dio: ^5.4.0
 
 

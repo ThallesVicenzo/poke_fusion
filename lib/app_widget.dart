@@ -9,11 +9,11 @@ class PokeFusion extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Modular.setInitialRoute(MainRoutes.splash.route);
-
     return MaterialApp.router(
-      title: 'PokeFusion',
+      title: 'Poke Fusion',
       debugShowCheckedModeBanner: false,
-      routerConfig: Modular.routerConfig,
+      routeInformationParser: Modular.routeInformationParser,
+      routerDelegate: Modular.routerDelegate,
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.red,
       ),
