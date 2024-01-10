@@ -8,25 +8,26 @@ import 'package:flutter_modular/flutter_modular.dart';
 import '../../../../core/main_routes.dart';
 
 class SplashPage extends StatefulWidget {
-  const SplashPage({super.key});
+  const SplashPage({
+    super.key,
+  });
 
   @override
   State<SplashPage> createState() => _SplashScreen();
 }
 
 class _SplashScreen extends State<SplashPage> {
-  double opacity = 1;
-
   @override
   void initState() {
-    super.initState();
-
-    Timer(const Duration(milliseconds: 1300), () {
+    Timer(const Duration(milliseconds: 1500), () {
       setState(() {
         opacity = 0;
       });
     });
+    super.initState();
   }
+
+  double opacity = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +43,7 @@ class _SplashScreen extends State<SplashPage> {
         child: const Center(
           child: AppImageWidget(
             image: AppImage.logo,
-            size: Size(350, 350),
+            size: Size(300, 300),
           ),
         ),
       ),
