@@ -1,4 +1,4 @@
-import 'package:poke_fusion/features/splash/domain/entities/poke_data_entity.dart';
+import 'package:poke_fusion/features/home/domain/entities/poke_data_entity.dart';
 
 class PokeDataModel extends PokeDataEntity {
   PokeDataModel(
