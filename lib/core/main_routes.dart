@@ -1,6 +1,7 @@
 enum MainRoutes {
   splash('/splash'),
-  home('/home');
+  home('/home'),
+  defaultError('/defaultErrorPage');
 
   const MainRoutes(this.route);
 
