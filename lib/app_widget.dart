@@ -15,7 +15,7 @@ class PokeFusion extends StatelessWidget {
       routeInformationParser: Modular.routeInformationParser,
       routerDelegate: Modular.routerDelegate,
       theme: ThemeData(
-        scaffoldBackgroundColor: Colors.red,
+        scaffoldBackgroundColor: const Color(0xffE6E6E6),
       ),
       builder: (context, child) {
         return UiOverlayColor(

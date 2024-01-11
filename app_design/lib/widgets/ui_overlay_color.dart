@@ -13,7 +13,7 @@ class UiOverlayColor extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle(
-        statusBarColor: overlayColor ?? Colors.red,
+        statusBarColor: overlayColor ?? const Color(0xffE6E6E6),
         statusBarIconBrightness: brightness ?? Brightness.dark,
       ),
       child: child,
