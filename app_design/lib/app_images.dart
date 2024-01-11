@@ -1,6 +1,6 @@
 enum AppImage {
   logo('logo.png'),
-  pikachuErrpr('pikachuError.gif');
+  pikachuError('pikachuError.gif');
 
   const AppImage(this.name);
 
