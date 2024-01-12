@@ -5,6 +5,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../widgets/default_button.dart';
+
 class ErrorPageParams {
   /// Title of error page
   final String titleError;
@@ -192,27 +194,10 @@ class DefaultErrorPage extends StatelessWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                TextButton(
-                  child: Container(
-                    constraints: BoxConstraints(
-                      maxWidth: MediaQuery.of(context).size.width * 0.4,
-                      minHeight: 32,
-                    ),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      color: Colors.blueAccent,
-                    ),
-                    child: Center(
-                      child: Text(
-                        params.onButtonPressed == null
-                            ? 'Voltar'
-                            : params.buttonErrorTitle,
-                        style: const TextStyle(
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                  ),
+                DefaultButton(
+                  title: params.onButtonPressed == null
+                      ? 'Voltar'
+                      : params.buttonErrorTitle,
                   onPressed: () {
                     if (params.onButtonPressed == null) {
                       Navigator.of(context).canPop()
