@@ -1,6 +1,6 @@
 class FusionEntity {
   final String name;
-  final String image;
+  final String? image;
 
   FusionEntity({
     required this.name,
