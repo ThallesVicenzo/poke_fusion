@@ -1,14 +1,14 @@
 import 'package:app_design/app_images.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
-class AppImageWidget extends StatelessWidget {
+class AssetImageWidget extends StatelessWidget {
   final AppImage image;
   final Size size;
   final BoxFit fit;
   final Alignment alignment;
   final String? package;
 
-  const AppImageWidget({
+  const AssetImageWidget({
     super.key,
     required this.image,
     this.size = const Size(24, 24),

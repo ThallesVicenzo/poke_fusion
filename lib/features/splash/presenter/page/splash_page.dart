@@ -1,6 +1,6 @@
 import 'package:app_design/app_images.dart';
 import 'package:app_design/pages/default_erro_page.dart';
-import 'package:app_design/widgets/app_image_widget.dart';
+import 'package:app_design/widgets/asset_image_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:poke_fusion/core/page_state.dart';
@@ -61,7 +61,7 @@ class _SplashScreen extends State<SplashPage> {
             }
           },
           child: const Center(
-            child: AppImageWidget(
+            child: AssetImageWidget(
               image: AppImage.logo,
               size: Size(300, 300),
             ),

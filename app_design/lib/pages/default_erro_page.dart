@@ -1,5 +1,5 @@
 import 'package:app_design/app_images.dart';
-import 'package:app_design/widgets/app_image_widget.dart';
+import 'package:app_design/widgets/asset_image_widget.dart';
 import 'package:app_design/widgets/ui_overlay_color.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -109,7 +109,7 @@ class DefaultErrorPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  AppImageWidget(
+                  AssetImageWidget(
                     image: params.image,
                     size: const Size(300, 300),
                   ),
