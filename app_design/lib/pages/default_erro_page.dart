@@ -215,7 +215,7 @@ class DefaultErrorPage extends StatelessWidget {
                   child: GestureDetector(
                     onTap: onBackStart,
                     child: const Text(
-                      'Fechar App',
+                      'Voltar para o início',
                       style: TextStyle(
                         color: Colors.white,
                       ),
