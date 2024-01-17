@@ -8,6 +8,7 @@ import 'package:poke_fusion/core/page_state.dart';
 import 'package:poke_fusion/features/splash/domain/entities/poke_data_entity.dart';
 
 import '../controller/home_controller.dart';
+import '../widgets/custom_dropdown_button.dart';
 
 class HomePage extends StatefulWidget {
   final HomeController controller;
@@ -26,9 +27,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   void initState() {
-    widget.controller.addListener(() {
-      listenableErrorState();
-    });
+    widget.controller.state.addListener(listenableErrorState);
     super.initState();
   }
 
@@ -82,10 +81,16 @@ class _HomePageState extends State<HomePage> {
                   Visibility(
                     visible: state is! SuccessState ? false : true,
                     replacement: state is LoadingState
-                        ? const Center(
-                            child: CircularProgressIndicator(),
+                        ? const Padding(
+                            padding: EdgeInsets.all(82),
+                            child: Center(
+                              child: CircularProgressIndicator(),
+                            ),
                           )
-                        : const SizedBox.shrink(),
+                        : const Padding(
+                            padding: EdgeInsets.all(82),
+                            child: SizedBox.shrink(),
+                          ),
                     child: NetworkImageWidget(
                       url: state is! SuccessState ? '' : state.asSuccess.image!,
                       size: const Size(200, 200),
@@ -94,24 +99,14 @@ class _HomePageState extends State<HomePage> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      DropdownButton(
-                        hint: const Text(
-                          'Select a pokemon',
-                        ),
-                        items: widget.pokeData.map((e) {
-                          return DropdownMenuItem(
-                            value: e.name,
-                            child: Text(
-                              e.name,
-                            ),
-                          );
-                        }).toList(),
+                      CustomDropDownButton(
+                        name: leftName,
+                        pokeData: widget.pokeData,
                         onChanged: (value) {
                           setState(() {
                             leftName = value;
                           });
                         },
-                        value: leftName,
                       ),
                       IconButton(
                         onPressed: () {
@@ -125,24 +120,14 @@ class _HomePageState extends State<HomePage> {
                           Icons.swap_horiz,
                         ),
                       ),
-                      DropdownButton(
-                        hint: const Text(
-                          'Select a pokemon',
-                        ),
-                        items: widget.pokeData.map((e) {
-                          return DropdownMenuItem(
-                            value: e.name,
-                            child: Text(
-                              e.name,
-                            ),
-                          );
-                        }).toList(),
+                      CustomDropDownButton(
+                        name: rightName,
+                        pokeData: widget.pokeData,
                         onChanged: (value) {
                           setState(() {
                             rightName = value;
                           });
                         },
-                        value: rightName,
                       ),
                     ],
                   ),
@@ -150,6 +135,7 @@ class _HomePageState extends State<HomePage> {
                     height: 56,
                   ),
                   DefaultButton(
+                    desable: leftName == null || rightName == null,
                     title: 'Fuse',
                     onPressed: () {
                       widget.controller.getFusion(
