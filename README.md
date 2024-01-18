@@ -1,6 +1,7 @@
 PokeFusion is an app that allows the user to fuse the 151 (first gereneration) pokemons
 This app has a very simple Presenter, just choose between the head pokemon and the body pokemon and tap on Fuse button.
-![Screenshot_1705599100](https://github.com/ThallesVicenzo/poke_fusion/assets/77857665/69d3b662-6f07-4ece-b7d4-02a8e036fbbc)
+
+![Screenshot_1705600087](https://github.com/ThallesVicenzo/poke_fusion/assets/77857665/ed36bf2a-4a5f-4b21-8857-ecbc4e315497)
 
 For some reason if the fuse call returns a error it will display this error page:
 ![error gif](https://github.com/ThallesVicenzo/poke_fusion/assets/77857665/17e6a0e9-92af-4ec3-94aa-e17db06aff13)
