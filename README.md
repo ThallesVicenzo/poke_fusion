@@ -1,4 +1,4 @@
-PokeFusion is an app that allows the user to fuse the 151 (first gereneration) pokemons
+PokeFusion is an app that allows the user to fuse the 151 (first gereneration) pokemons.
 This app has a very simple Presenter, just choose between the head pokemon and the body pokemon and tap on Fuse button.
 
 ![Screenshot_1705600087](https://github.com/ThallesVicenzo/poke_fusion/assets/77857665/ed36bf2a-4a5f-4b21-8857-ecbc4e315497)
