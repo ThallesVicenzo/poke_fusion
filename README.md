@@ -8,6 +8,6 @@ For some reason if any api request returns a error it will display this error pa
 ![Screenshot_1705601278](https://github.com/ThallesVicenzo/poke_fusion/assets/77857665/a169472b-97cd-4b53-8f7c-ca5638dabdf8)
 
 
-The real idea behind this app is to show a very complex code architecture, Unit/widget tests and some Solid Principles as such: TDD, Design Patterns, Single responsability, etc. It also has a MicroApp to handle the complex widgets.
+The real idea behind this app is to show a very complex code architecture, Unit/widget tests and some Solid Principles as such: TDD, Design Patterns, Single responsability, etc. Also, this app have a MicroApp to handle the complex widgets.
 
-Also, this app will be posted on PlayStore for everyone download for free!
+This app will be posted on PlayStore for everyone download for free!
