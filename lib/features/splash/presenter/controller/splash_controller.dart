@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:poke_fusion/core/main_routes.dart';
 import 'package:poke_fusion/core/page_state.dart';
 
 import '../../domain/entities/poke_data_entity.dart';
@@ -12,6 +14,15 @@ class SplashController extends ChangeNotifier {
   final state = ValueNotifier<PageState<List<PokeDataEntity>>>(InitialState());
 
   final opacity = ValueNotifier<double>(1);
+
+  void onAnimationEd(double value) {
+    if (value == 0) {
+      Modular.to.navigate(
+        MainRoutes.home.route,
+        arguments: state.value.asSuccess,
+      );
+    }
+  }
 
   Future<void> getPokeData() async {
     state.value = LoadingState();

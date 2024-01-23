@@ -53,12 +53,7 @@ class _SplashScreen extends State<SplashPage> {
           opacity: value,
           duration: kThemeAnimationDuration,
           onEnd: () {
-            if (value == 0) {
-              Modular.to.navigate(
-                MainRoutes.home.route,
-                arguments: widget.controller.state.value.asSuccess,
-              );
-            }
+            widget.controller.onAnimationEd(value);
           },
           child: const Center(
             child: AssetImageWidget(
