@@ -37,7 +37,7 @@ void main() {
           .thenAnswer((_) async => Response.success(success));
 
       // Act
-      final result = await pokeDataUseCase();
+      final result = await pokeDataUseCase.call();
 
       expect(result.isSuccess, true);
       expect(result.asSuccess, success);
@@ -55,7 +55,7 @@ void main() {
       );
 
       // Act
-      final result = await pokeDataUseCase();
+      final result = await pokeDataUseCase.call();
 
       // Assert
       expect(result.isFailure, isTrue);
