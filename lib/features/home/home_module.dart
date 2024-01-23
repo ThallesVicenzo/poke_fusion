@@ -14,7 +14,7 @@ class HomeModule extends Module {
   List<Bind<Object>> get binds => [
         Bind.factory<FusionDataSource>(
           (i) => FusionDataSourceImp(
-            dio: i(),
+            clientHttp: i(),
           ),
         ),
         Bind.factory<FusionRepository>(
