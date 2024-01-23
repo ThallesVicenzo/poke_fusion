@@ -13,7 +13,7 @@ class SplashModule extends Module {
   List<Bind> get binds => [
         Bind.factory<PokeDataDataSource>(
           (i) => PokeDataDataSourceImpl(
-            dio: i(),
+            clientHttp: i(),
           ),
         ),
         Bind.factory<PokeDataRepository>(
