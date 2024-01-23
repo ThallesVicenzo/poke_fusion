@@ -19,7 +19,7 @@ class PokeDataRepositoryImp implements PokeDataRepository {
       final pokeData = await dataSource.call();
       return Success(pokeData);
     } on ClientHttpException catch (e) {
-      throw Response.fail(
+      return Response.fail(
         ResponseClientError(
           exception: e,
           errorCode: e.responseCode,
