@@ -12,7 +12,6 @@ void main() {
   group('PokeDataDataSourceImpl', () {
     late PokeDataDataSourceImpl pokeDataDataSource;
     late MockDio mockClientHttp;
-    late Faker faker;
 
     setUp(() {
       // Configurar o ambiente de teste
@@ -20,7 +19,6 @@ void main() {
       pokeDataDataSource = PokeDataDataSourceImpl(
         clientHttp: mockClientHttp,
       );
-      faker = Faker();
     });
 
     test('should return a PokeDataModel when request is made', () async {
