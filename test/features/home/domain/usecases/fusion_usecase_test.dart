@@ -36,6 +36,8 @@ void main() {
 
       expect(result.isSuccess, true);
       expect(result.asSuccess, success);
+
+      verify(() => mockFusionRepository.call(head, body)).called(1);
     });
 
     test('Should return a error when something wrong happens', () async {
@@ -49,6 +51,8 @@ void main() {
 
       expect(result.isFailure, true);
       expect(result.asFailure, tResponseFailure);
+
+      verify(() => mockFusionRepository.call(head, body)).called(1);
     });
   });
 }
