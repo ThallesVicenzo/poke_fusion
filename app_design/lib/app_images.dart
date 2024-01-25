@@ -1,3 +1,5 @@
+import 'dart:io';
+
 enum AppImage {
   logo('logo.png'),
   pikachuError('pikachuError.gif');
@@ -9,4 +11,6 @@ enum AppImage {
   String get _defaultPath => 'assets/images/';
 
   String get path => '$_defaultPath$name';
+
+  File get file => File(path);
 }
