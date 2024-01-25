@@ -17,7 +17,7 @@ class FusionRepositoryImp implements FusionRepository {
       final fusionData = await dataSource.call(head, body);
       return Success(fusionData);
     } on ClientHttpException catch (e) {
-      throw Response.fail(
+      return Response.fail(
         ResponseClientError(
           exception: e,
           errorCode: e.responseCode,
