@@ -5,7 +5,6 @@ import 'package:poke_fusion/core/client/client_http.dart';
 import 'package:poke_fusion/core/client/client_http_response.dart';
 import 'package:poke_fusion/features/splash/external/pokedata_data_source_imp.dart';
 
-// Crie uma classe mock para o Dio
 class MockDio extends Mock implements ClientHttp {}
 
 void main() {
@@ -14,7 +13,6 @@ void main() {
     late MockDio mockClientHttp;
 
     setUp(() {
-      // Configurar o ambiente de teste
       mockClientHttp = MockDio();
       pokeDataDataSource = PokeDataDataSourceImpl(
         clientHttp: mockClientHttp,
@@ -43,7 +41,6 @@ void main() {
       expect(result.length, equals(fakePokemonData.length));
       expect(result[0].name, equals(fakePokemonData[0]['name']));
       expect(result[1].name, equals(fakePokemonData[1]['name']));
-      // Add more assertions as needed
     });
   });
 }
