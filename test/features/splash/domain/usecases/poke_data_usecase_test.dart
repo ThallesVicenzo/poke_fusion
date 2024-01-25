@@ -46,7 +46,7 @@ void main() {
       verify(() => mockRepository.call()).called(1);
     });
 
-    test('should return a list of PokeDataEntity from repository', () async {
+    test('should return a error when something wrong happens', () async {
       final tResponseFailure = ResponseGenericError(error: Exception());
 
       // Arrange
