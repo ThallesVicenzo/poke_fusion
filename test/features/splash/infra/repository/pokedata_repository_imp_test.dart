@@ -32,7 +32,7 @@ void main() {
       when(() => mockDataSource.call()).thenAnswer((_) async => fakePokeData);
 
       // Act
-      final result = await pokeDataRepository();
+      final result = await pokeDataRepository.call();
 
       // Assert
       expect(result.isSuccess, true);
@@ -54,7 +54,7 @@ void main() {
 
       when(() => mockDataSource.call()).thenThrow(fakeException);
 
-      final result = await pokeDataRepository();
+      final result = await pokeDataRepository.call();
       // Act & Assert
       expect(result.isFailure, true);
       expect(result.asFailure, isA<ResponseClientError>());
@@ -67,7 +67,7 @@ void main() {
       final fakeException = Exception('Some generic exception');
       when(() => mockDataSource.call()).thenThrow(fakeException);
 
-      final result = await pokeDataRepository();
+      final result = await pokeDataRepository.call();
 
       // Act & Assert
       expect(result.isFailure, true);
