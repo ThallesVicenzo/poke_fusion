@@ -32,9 +32,11 @@ void main() {
 
         await sut.getPokeData();
 
+        expect(sut.state.value.isError, true);
+
         expect(
           sut.state.value.asError,
-          isA<ResponseGenericError>(),
+          equals(error),
         );
 
         verify(() => mockPokeDataUseCase.call()).called(1);
@@ -52,6 +54,8 @@ void main() {
         );
 
         await sut.getPokeData();
+
+        expect(sut.state.value.isSuccess, true);
 
         expect(sut.opacity.value, equals(0));
 
