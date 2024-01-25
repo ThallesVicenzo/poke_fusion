@@ -1,7 +1,7 @@
 import 'package:poke_fusion/core/domain/response_error.dart';
 
 abstract class PageState<S extends Object?> {
-  bool isSuccess() => this is SuccessState;
+  bool get isSuccess => this is SuccessState;
 
   bool get isLoading => this is LoadingState;
 
