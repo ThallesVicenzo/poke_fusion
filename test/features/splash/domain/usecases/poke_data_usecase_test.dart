@@ -60,6 +60,8 @@ void main() {
       // Assert
       expect(result.isFailure, isTrue);
       expect(result.asFailure, tResponseFailure);
+
+      verify(() => mockRepository.call()).called(1);
     });
   });
 }
