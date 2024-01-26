@@ -11,12 +11,26 @@ class HomeController extends ChangeNotifier {
 
   final state = ValueNotifier<PageState<FusionEntity>>(InitialState());
 
+  String fixWrongPokemonName(String name) {
+    if (name == 'mr-mime') {
+      return 'mr. mime';
+    } else if (name == 'nidoran-f') {
+      return 'Nidoran ♀';
+    } else if (name == 'nidoran-m') {
+      return 'Nidoran ♂';
+    }
+    return name;
+  }
+
   Future<void> getFusion({
     required headPokemon,
     required bodyPokemon,
   }) async {
     state.value = LoadingState();
-    final result = await useCase.call(headPokemon, bodyPokemon);
+    final result = await useCase.call(
+      fixWrongPokemonName(headPokemon),
+      fixWrongPokemonName(bodyPokemon),
+    );
 
     result.deal(
       onFail: (e) => state.value = ErrorState(error: e),
