@@ -1,4 +1,4 @@
-package com.example.poke_fusion
+package com.release.poke_fusion
 
 import io.flutter.embedding.android.FlutterActivity
 
